@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        #dialogueSummary {
+            text-align: left;
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .story-entry {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .story-entry:last-child {
+            border-bottom: none;
+        }
+        button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Game Summary</h1>
+
+    <h2>Game Outcome</h2>
+    <div id="gameOutcome">Loading...</div>
+
+    <h2>Game Stats</h2>
+    <ul>
+        <li><strong>Final Day Reached:</strong> <span id="finalDay">Loading...</span></li>
+        <li><strong>Total Bushels Collected:</strong> <span id="totalWheat">Loading...</span></li>
+        <li><strong>Total Water Buckets Used:</strong> <span id="totalWater">Loading...</span></li>
+    </ul>
+
+    <h2>Story Summary</h2>
+    <div id="dialogueSummary">Loading...</div>
+
+    <button id="restartGame">Restart Game</button>
+
+    <script>
+        window.onload = function () {
+            console.log("📖 Loading game summary...");
+
+            // ✅ Retrieve stored data from localStorage
+            const finalDay = localStorage.getItem("finalDay") || "Unknown";
+            const totalWheat = localStorage.getItem("totalWheatCollected") || "0";
+            const totalWater = localStorage.getItem("totalWaterBuckets") || "0";
+            const gameOutcome = localStorage.getItem("gameOutcome") || "No result available.";
+            const dialogueHistory = JSON.parse(localStorage.getItem("dialogueHistory")) || [];
+
+            // ✅ Populate summary fields
+            document.getElementById("finalDay").textContent = finalDay;
+            document.getElementById("totalWheat").textContent = totalWheat;
+            document.getElementById("totalWater").textContent = totalWater;
+
+            // ✅ Display game outcome message
+            document.getElementById("gameOutcome").innerHTML = `<p><strong>${gameOutcome}</strong></p>`;
+
+            // ✅ Display full story dialogue in order
+            const dialogueContainer = document.getElementById("dialogueSummary");
+
+            if (dialogueHistory.length === 0) {
+                dialogueContainer.innerHTML = "<p>No dialogue recorded.</p>";
+            } else {
+                dialogueHistory.forEach(entry => {
+                    const entryElement = document.createElement("div");
+                    entryElement.classList.add("story-entry");
+                    entryElement.innerHTML = `<strong>Day ${entry.day} - ${entry.event}:</strong> ${entry.text}`;
+                    dialogueContainer.appendChild(entryElement);
+                });
+            }
+        };
+
+        // ✅ Restart game button functionality
+        document.getElementById("restartGame").addEventListener("click", function () {
+            if (confirm("Are you sure you want to restart the game? All progress will be lost.")) {
+                localStorage.clear(); // Clear all saved game data
+                window.location.href = "index.html"; // Redirect to the main game
+            }
+        });
+    </script>
+
+</body>
+</html>
+

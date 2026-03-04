@@ -1,0 +1,18 @@
+
+
+The player has run into a drought in the last harvest season that destroyed all their yield. In response, they must
+produce a certain amount of crops. 
+
+
+The first event is one that happens fairly quickly. It is a small storm, but there is a small chance that the plants will get destroyed
+the player has a choice to either spend some money to protext the crop or to not and then to risk It
+
+the second event is one that involves sacrificing land in exchange for money. they can use this money in the market which can buy them some bushels of plants
+the bushels can go toward their collective total.
+
+third: first harvest of two. the user will get bushels of plants and then deicde if they want to continue or if they will siwtch their strategy with land or 
+different things etc.
+
+fourth: theer is some pests that infest some of the plants. 
+
+fifth - final harvest, basically sums up all the bushels creating the final result- either the user wins or loses.
