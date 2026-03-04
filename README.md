@@ -34,17 +34,7 @@ Farmer Sim is an interactive 3D web-based simulation where players manage resour
 
 ## Tech Stack
 
-|
- Technology 
-|
- Purpose 
-|
-|
----
-|
----
-|
-|
+
 [
 Three.js
 ](
