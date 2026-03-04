@@ -32,30 +32,17 @@ Farmer Sim is an interactive 3D web-based simulation where players manage resour
 ---
 |
 ---
-|
-|
-!
-[
 <img width="1899" height="954" alt="image" src="https://github.com/user-attachments/assets/4c1c8cae-7249-4403-b9f1-7400b21eeaad" />
 
-|
-!
-[
+
 <img width="1872" height="916" alt="image" src="https://github.com/user-attachments/assets/74f798ec-a4cd-4215-88ad-9c62b6c20e06" />
 
-|
-|
-!
-[
 <img width="954" height="646" alt="image" src="https://github.com/user-attachments/assets/641bf705-afcc-4d1a-879e-124be8535f1c" />
 
-|
-!
-[
+
 <img width="570" height="391" alt="image" src="https://github.com/user-attachments/assets/a4828a44-9b6e-4361-bc6d-28d0d91e8a40" />
 
-)
-|
+
 <img width="1091" height="934" alt="image" src="https://github.com/user-attachments/assets/b67db732-8e45-4f6b-b579-62ff0cb1e985" />
 
 
